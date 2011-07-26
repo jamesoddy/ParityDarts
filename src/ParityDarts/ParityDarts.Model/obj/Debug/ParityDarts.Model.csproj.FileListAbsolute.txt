@@ -1,5 +1,0 @@
-C:\Projects\ParityDarts\src\ParityDarts\ParityDarts.Model\obj\Debug\ResolveAssemblyReference.cache
-C:\Projects\ParityDarts\src\ParityDarts\ParityDarts.Model\bin\Debug\ParityDarts.Model.dll
-C:\Projects\ParityDarts\src\ParityDarts\ParityDarts.Model\bin\Debug\ParityDarts.Model.pdb
-C:\Projects\ParityDarts\src\ParityDarts\ParityDarts.Model\obj\Debug\ParityDarts.Model.dll
-C:\Projects\ParityDarts\src\ParityDarts\ParityDarts.Model\obj\Debug\ParityDarts.Model.pdb
