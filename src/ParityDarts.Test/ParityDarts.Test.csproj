@@ -31,6 +31,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="nunit.framework, Version=2.5.10.11092, Culture=neutral, PublicKeyToken=96d09a1eb7f44a77, processorArchitecture=MSIL" />
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -40,10 +41,14 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Model\IDartTest.cs" />
+    <Compile Include="Model\DoubleWinDartTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\ParityDarts.Contracts\ParityDarts.Contracts.csproj">
+      <Project>{80F96578-ACE8-419E-B7FD-3CE161D46011}</Project>
+      <Name>ParityDarts.Contracts</Name>
+    </ProjectReference>
     <ProjectReference Include="..\ParityDarts.Model\ParityDarts.Model.csproj">
       <Project>{1B00C191-1381-4C5C-BA70-81AC969A48A6}</Project>
       <Name>ParityDarts.Model</Name>

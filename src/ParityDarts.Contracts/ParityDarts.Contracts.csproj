@@ -5,11 +5,11 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProductVersion>8.0.30703</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{1B00C191-1381-4C5C-BA70-81AC969A48A6}</ProjectGuid>
+    <ProjectGuid>{80F96578-ACE8-419E-B7FD-3CE161D46011}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>ParityDarts.Model</RootNamespace>
-    <AssemblyName>ParityDarts.Model</AssemblyName>
+    <RootNamespace>ParityDarts.Contracts</RootNamespace>
+    <AssemblyName>ParityDarts.Contracts</AssemblyName>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -40,16 +40,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="StandardBoard\StandardBoardRegions.cs" />
-    <Compile Include="Implementation\DoubleWinDart.cs" />
-    <Compile Include="Implementation\BoardRegion.cs" />
+    <Compile Include="BoardRegionType.cs" />
+    <Compile Include="DartResult.cs" />
+    <Compile Include="IBoardRegion.cs" />
+    <Compile Include="IDart.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\ParityDarts.Contracts\ParityDarts.Contracts.csproj">
-      <Project>{80F96578-ACE8-419E-B7FD-3CE161D46011}</Project>
-      <Name>ParityDarts.Contracts</Name>
-    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
