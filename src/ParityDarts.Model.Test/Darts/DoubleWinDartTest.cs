@@ -6,7 +6,7 @@ using ParityDarts.Model;
 using NUnit.Framework;
 using ParityDarts.Contracts;
 
-namespace ParityDarts.Test.Model
+namespace ParityDarts.Model.Test
 {
     [TestFixture]
     public class DoubleWinDartTest
@@ -14,7 +14,8 @@ namespace ParityDarts.Test.Model
         [Test]
         public void DoubleWinDart_EqualPointsAndDouble_ShouldOutputWinResult()
         {
-            BoardRegion d20 = StandardBoard.Regions.Single(x => x.Code == "d20");
+            StandardBoard board = new StandardBoard();
+            IBoardRegion d20 = board.Regions.Single(x => x.Code == "d20");
             DoubleWinDart dart = new DoubleWinDart(40, d20);
             Assert.AreEqual(DartResult.Win, dart.Result);
         }
@@ -22,7 +23,8 @@ namespace ParityDarts.Test.Model
         [Test]
         public void DoubleWinDart_OverPoints_ShouldOutputBustResult()
         {
-            BoardRegion t20 = StandardBoard.Regions.Single(x => x.Code == "t20");
+            StandardBoard board = new StandardBoard();
+            IBoardRegion t20 = board.Regions.Single(x => x.Code == "t20");
             DoubleWinDart dart = new DoubleWinDart(40, t20);
             Assert.AreEqual(DartResult.Bust, dart.Result);
         }
@@ -30,8 +32,9 @@ namespace ParityDarts.Test.Model
         [Test]
         public void DoubleWinDart_UnderPoints_ShouldOutputScoreResult()
         {
-            BoardRegion s20 = StandardBoard.Regions.Single(x => x.Code == "s20");
-            DoubleWinDart dart = new DoubleWinDart(40, s20);
+            StandardBoard board = new StandardBoard();
+            IBoardRegion s20 = board.Regions.Single(x => x.Code == "s20");
+            DoubleWinDart dart = new DoubleWinDart(22, s20);
             Assert.AreEqual(DartResult.Score, dart.Result);
         }
     }

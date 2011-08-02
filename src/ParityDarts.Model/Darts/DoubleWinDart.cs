@@ -4,15 +4,17 @@ using System.Linq;
 using System.Text;
 using ParityDarts.Contracts;
 using ParityDarts.Model;
+using System.ComponentModel.Composition;
 
 namespace ParityDarts.Model
 {
+    [Export(typeof(IDart))]
     public class DoubleWinDart : IDart
     {
         int _pointsRemaining;
-        BoardRegion _region;
+        IBoardRegion _region;
 
-        public DoubleWinDart(int pointsRemaining, BoardRegion region)
+        public DoubleWinDart(int pointsRemaining, IBoardRegion region)
         {
             _pointsRemaining = pointsRemaining;
             _region = region;
@@ -46,7 +48,7 @@ namespace ParityDarts.Model
                 {
                     return DartResult.Win;
                 }
-                else if (this.Region.Value > this.PointsRemaining)
+                else if (this.Region.Value >= this.PointsRemaining + 1)
                 {
                     return DartResult.Bust;
                 }

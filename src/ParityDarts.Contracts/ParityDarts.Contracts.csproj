@@ -42,6 +42,7 @@
   <ItemGroup>
     <Compile Include="BoardRegionType.cs" />
     <Compile Include="DartResult.cs" />
+    <Compile Include="IBoard.cs" />
     <Compile Include="IBoardRegion.cs" />
     <Compile Include="IDart.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

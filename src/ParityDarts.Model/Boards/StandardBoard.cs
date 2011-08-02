@@ -3,14 +3,17 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using ParityDarts.Contracts;
+using System.ComponentModel.Composition;
 
 namespace ParityDarts.Model
 {
-    public class StandardBoard
+    [Export(typeof(IBoard))]
+    public class StandardBoard : IBoard
     {
-        private static ICollection<BoardRegion> _regions;
 
-        public static ICollection<BoardRegion> Regions
+        private HashSet<IBoardRegion> _regions;
+
+        public IEnumerable<IBoardRegion> Regions
         {
             get
             {
@@ -21,35 +24,36 @@ namespace ParityDarts.Model
                 return _regions;
             }
         }
-        public static void BuildRegions()
+
+        public void BuildRegions()
         {
-            _regions = new HashSet<BoardRegion>();
+            _regions = new HashSet<IBoardRegion>();
 
             // Regions 1 to 20
             for (int i = 1; i <= 20; i++)
             {
-                BoardRegion newTrebleRegion = new BoardRegion();
+                StandardBoardRegion newTrebleRegion = new StandardBoardRegion();
                 newTrebleRegion.Number = i;
                 newTrebleRegion.RegionType = BoardRegionType.Treble;
                 newTrebleRegion.Value = i * 3;
                 newTrebleRegion.Code = string.Format("t{0:0}", i);
                 _regions.Add(newTrebleRegion);
-                BoardRegion newDoubleRegion = new BoardRegion();
+                StandardBoardRegion newDoubleRegion = new StandardBoardRegion();
                 newDoubleRegion.Number = i;
                 newDoubleRegion.RegionType = BoardRegionType.Double;
                 newDoubleRegion.Value = i * 2;
-                newTrebleRegion.Code = string.Format("d{0:0}", i);
+                newDoubleRegion.Code = string.Format("d{0:0}", i);
                 _regions.Add(newDoubleRegion);
-                BoardRegion newSingleRegion = new BoardRegion();
+                StandardBoardRegion newSingleRegion = new StandardBoardRegion();
                 newSingleRegion.Number = i;
                 newSingleRegion.RegionType = BoardRegionType.Single;
                 newSingleRegion.Value = i;
-                newTrebleRegion.Code = string.Format("s{0:0}", i);
+                newSingleRegion.Code = string.Format("s{0:0}", i);
                 _regions.Add(newSingleRegion);
             }
 
             // Outer region
-            BoardRegion outerRegion = new BoardRegion();
+            StandardBoardRegion outerRegion = new StandardBoardRegion();
             outerRegion.Number = 25;
             outerRegion.RegionType = BoardRegionType.Single;
             outerRegion.Value = 25;
@@ -57,7 +61,7 @@ namespace ParityDarts.Model
             _regions.Add(outerRegion);
             
             // Bull region
-            BoardRegion bullRegion = new BoardRegion();
+            StandardBoardRegion bullRegion = new StandardBoardRegion();
             bullRegion.Number = 25;
             bullRegion.RegionType = BoardRegionType.Double;
             bullRegion.Value = 50;
@@ -65,7 +69,7 @@ namespace ParityDarts.Model
             _regions.Add(bullRegion);
             
             // Miss region
-            BoardRegion missRegion = new BoardRegion();
+            StandardBoardRegion missRegion = new StandardBoardRegion();
             missRegion.Number = 0;
             missRegion.RegionType = BoardRegionType.Miss;
             missRegion.Value = 0;
@@ -73,7 +77,7 @@ namespace ParityDarts.Model
             _regions.Add(missRegion);
             
             // Bounce out region
-            BoardRegion bounceOutRegion = new BoardRegion();
+            StandardBoardRegion bounceOutRegion = new StandardBoardRegion();
             bounceOutRegion.Number = 0;
             bounceOutRegion.RegionType = BoardRegionType.Miss;
             bounceOutRegion.Value = 0;

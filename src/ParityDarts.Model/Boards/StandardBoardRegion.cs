@@ -6,7 +6,7 @@ using ParityDarts.Contracts;
 
 namespace ParityDarts.Model
 {
-    public class BoardRegion : IBoardRegion
+    public class StandardBoardRegion : IBoardRegion
     {
         public BoardRegionType RegionType
         {

@@ -32,6 +32,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
+    <Reference Include="System.ComponentModel.Composition" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -40,9 +41,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="StandardBoard\StandardBoardRegions.cs" />
-    <Compile Include="Implementation\DoubleWinDart.cs" />
-    <Compile Include="Implementation\BoardRegion.cs" />
+    <Compile Include="Boards\StandardBoard.cs" />
+    <Compile Include="Darts\DoubleWinDart.cs" />
+    <Compile Include="Boards\StandardBoardRegion.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
