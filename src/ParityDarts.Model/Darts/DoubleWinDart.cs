@@ -48,7 +48,7 @@ namespace ParityDarts.Model
                 {
                     return DartResult.Win;
                 }
-                else if (this.Region.Value >= this.PointsRemaining + 1)
+                else if (this.Region.Value >= this.PointsRemaining - 1)
                 {
                     return DartResult.Bust;
                 }

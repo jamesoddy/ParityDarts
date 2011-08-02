@@ -24,8 +24,8 @@ namespace ParityDarts.Model.Test
         public void DoubleWinDart_OverPoints_ShouldOutputBustResult()
         {
             StandardBoard board = new StandardBoard();
-            IBoardRegion t20 = board.Regions.Single(x => x.Code == "t20");
-            DoubleWinDart dart = new DoubleWinDart(40, t20);
+            IBoardRegion s19 = board.Regions.Single(x => x.Code == "s19");
+            DoubleWinDart dart = new DoubleWinDart(20, s19);
             Assert.AreEqual(DartResult.Bust, dart.Result);
         }
 

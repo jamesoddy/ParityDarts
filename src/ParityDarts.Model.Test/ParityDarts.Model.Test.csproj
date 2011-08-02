@@ -45,6 +45,7 @@
     <Compile Include="Boards\StandardBoardTest.cs" />
     <Compile Include="Darts\DoubleWinDartTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Throws\StandardThrowTest.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\ParityDarts.Contracts\ParityDarts.Contracts.csproj">

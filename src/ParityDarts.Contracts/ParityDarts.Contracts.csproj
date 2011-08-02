@@ -40,12 +40,17 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="BoardRegionType.cs" />
-    <Compile Include="DartResult.cs" />
-    <Compile Include="IBoard.cs" />
-    <Compile Include="IBoardRegion.cs" />
-    <Compile Include="IDart.cs" />
+    <Compile Include="Boards\BoardRegionType.cs" />
+    <Compile Include="Darts\DartResult.cs" />
+    <Compile Include="Boards\IBoard.cs" />
+    <Compile Include="Boards\IBoardRegion.cs" />
+    <Compile Include="Darts\IDart.cs" />
+    <Compile Include="Legs\ILeg.cs" />
+    <Compile Include="Player\IPlayer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Throws\IThrow.cs" />
+    <Compile Include="Legs\LegResult.cs" />
+    <Compile Include="Throws\ThrowResult.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
