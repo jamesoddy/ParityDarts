@@ -8,5 +8,6 @@ namespace ParityDarts.Contracts
     public interface IPlayer
     {
         string Name { get; }
+        double GetAverage(ILeg leg);
     }
 }

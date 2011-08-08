@@ -46,7 +46,7 @@
     <Compile Include="Boards\IBoardRegion.cs" />
     <Compile Include="Darts\IDart.cs" />
     <Compile Include="Legs\ILeg.cs" />
-    <Compile Include="Player\IPlayer.cs" />
+    <Compile Include="Players\IPlayer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Throws\IThrow.cs" />
     <Compile Include="Legs\LegResult.cs" />

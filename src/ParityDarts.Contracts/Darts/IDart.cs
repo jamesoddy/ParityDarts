@@ -11,5 +11,6 @@ namespace ParityDarts.Contracts
         int PointsRemaining { get; }
         DartResult Result { get; }
         IBoardRegion Region { get; }
+        IPlayer Player { get; }
     }
 }

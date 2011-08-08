@@ -9,6 +9,7 @@ namespace ParityDarts.Contracts
     {
         Win,
         Loss,
-        Draw
+        Draw,
+        Undetermined
     }
 }

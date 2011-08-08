@@ -57,6 +57,9 @@
       <Name>ParityDarts.Model</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Players\" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
     <PostBuildEvent>"$(SolutionDir)\tools\nunit\bin\nunit.exe" "$(TargetPath)"</PostBuildEvent>

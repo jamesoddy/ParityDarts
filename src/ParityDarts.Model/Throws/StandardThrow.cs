@@ -12,15 +12,22 @@ namespace ParityDarts.Model
     {
         int _startingPointsRemaining;
         HashSet<IDart> _darts = new HashSet<IDart>();
+        IPlayer _player;
 
-        public StandardThrow(int startingPointsRemaining)
+        public StandardThrow(int startingPointsRemaining, IPlayer player)
         {
             _startingPointsRemaining = startingPointsRemaining;
+            _player = player;
         }
 
         public ICollection<IDart> Darts
         {
             get { return _darts; }
+        }
+
+        public IPlayer Player
+        {
+            get { return _player; }
         }
 
         public int Points
