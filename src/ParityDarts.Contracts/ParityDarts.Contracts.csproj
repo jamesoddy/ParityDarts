@@ -45,13 +45,18 @@
     <Compile Include="Boards\IBoard.cs" />
     <Compile Include="Boards\IBoardRegion.cs" />
     <Compile Include="Darts\IDart.cs" />
+    <Compile Include="Meets\IMeet.cs" />
+    <Compile Include="Meets\IMeetFactory.cs" />
     <Compile Include="Legs\ILeg.cs" />
     <Compile Include="Players\IPlayer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Throws\IThrow.cs" />
     <Compile Include="Legs\LegResult.cs" />
     <Compile Include="Throws\ThrowResult.cs" />
+    <Compile Include="Tournaments\ITournament.cs" />
+    <Compile Include="Tournaments\ITournamentFactory.cs" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

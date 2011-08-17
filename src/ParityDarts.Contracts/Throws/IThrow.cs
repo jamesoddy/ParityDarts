@@ -11,6 +11,5 @@ namespace ParityDarts.Contracts
         int Points { get; }
         int PointsRemaining { get; }
         ThrowResult Result { get; }
-        IPlayer Player { get; }
     }
 }

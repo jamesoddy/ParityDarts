@@ -13,13 +13,11 @@ namespace ParityDarts.Model
     {
         int _pointsRemaining;
         IBoardRegion _region;
-        IPlayer _player;
 
-        public DoubleWinDart(int pointsRemaining, IBoardRegion region, IPlayer player)
+        public DoubleWinDart(int pointsRemaining, IBoardRegion region)
         {
             _pointsRemaining = pointsRemaining;
             _region = region;
-            _player = player;
         }
 
         public int Points
@@ -41,12 +39,7 @@ namespace ParityDarts.Model
         {
             get { return _pointsRemaining; }
         }
-
-        public IPlayer Player
-        {
-            get { return _player; }
-        }
-
+        
         public DartResult Result
         {
             get
