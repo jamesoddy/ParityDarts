@@ -10,9 +10,9 @@ namespace ParityDarts.Model
     [Export(typeof(IMeet))]
     public class StandardMeet : IMeet
     {
-        private ISet<ITournament> _tournaments = new HashSet<ITournament>();
+        private IList<ITournament> _tournaments = new List<ITournament>();
 
-        public ISet<ITournament> Tournaments
+        public IList<ITournament> Tournaments
         {
             get { return _tournaments; }
         }

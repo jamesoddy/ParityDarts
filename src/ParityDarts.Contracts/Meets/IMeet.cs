@@ -7,7 +7,7 @@ namespace ParityDarts.Contracts
 {
     public interface IMeet
     {
-        ISet<ITournament> Tournaments { get; }
+        IList<ITournament> Tournaments { get; }
         string Name { get; set; }
     }
 }
