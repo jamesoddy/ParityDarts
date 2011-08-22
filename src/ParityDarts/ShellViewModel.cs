@@ -56,8 +56,9 @@ namespace ParityDarts
 
         private void ExecuteAddNewMeetCommand(Object args)
         {
-            IRegionManager regionManager = RegionManager.GetRegionManager(
-                (DependencyObject)viewAwareStatus.View);
+            messageBoxService.ShowInformation("Add new meet.");
+            //IRegionManager regionManager = RegionManager.GetRegionManager(
+            //    (DependencyObject)viewAwareStatus.View);
             //IRegion region = regionManager.Regions[RegionNames.MainRegion];
 
             //GoogleImageSearchView googleImageSearchView =
