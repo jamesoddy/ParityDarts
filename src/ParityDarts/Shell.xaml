@@ -1,0 +1,15 @@
+﻿<Window
+    x:Class="ParityDarts.Shell"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:meffed="clr-namespace:MEFedMVVM.ViewModelLocator;assembly=MEFedMVVM.WPF"
+    xmlns:cal="clr-namespace:Microsoft.Practices.Prism.Regions;assembly=Microsoft.Practices.Prism"  
+    xmlns:regions="clr-namespace:ParityDarts.Regions"
+	Title="Shell" Height="300" Width="300"
+    meffed:ViewModelLocator.ViewModel="ShellViewModel"
+    >
+    <DockPanel>
+        <TextBlock Text="Shell" FontSize="36" />
+        <TabControl Margin="0" cal:RegionManager.RegionName="{x:Static regions:RegionNames.MainRegion}"/>
+    </DockPanel>
+</Window>
