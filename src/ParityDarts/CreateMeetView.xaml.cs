@@ -15,11 +15,11 @@ using System.Windows.Shapes;
 namespace ParityDarts
 {
     /// <summary>
-    /// Interaction logic for MeetView.xaml
+    /// Interaction logic for CreateMeetView.xaml
     /// </summary>
-    public partial class MeetView : UserControl
+    public partial class CreateMeetView : UserControl
     {
-        public MeetView()
+        public CreateMeetView()
         {
             InitializeComponent();
         }

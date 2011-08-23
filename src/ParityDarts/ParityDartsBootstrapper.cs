@@ -29,6 +29,7 @@ namespace ParityDarts
         {
             this.AggregateCatalog.Catalogs.Add(new AssemblyCatalog(typeof(App).Assembly));
             this.AggregateCatalog.Catalogs.Add(new AssemblyCatalog(typeof(Cinch.WPFMessageBoxService).Assembly));
+            this.AggregateCatalog.Catalogs.Add(new AssemblyCatalog("ParityDarts.Model.dll"));
         }
 
         protected override void InitializeShell()

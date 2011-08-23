@@ -86,10 +86,10 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="MeetView.xaml.cs">
-      <DependentUpon>MeetView.xaml</DependentUpon>
+    <Compile Include="CreateMeetView.xaml.cs">
+      <DependentUpon>CreateMeetView.xaml</DependentUpon>
     </Compile>
-    <Compile Include="MeetViewModel.cs" />
+    <Compile Include="CreateMeetViewModel.cs" />
     <Compile Include="Regions\RegionNames.cs" />
     <Compile Include="Shell.xaml.cs">
       <DependentUpon>Shell.xaml</DependentUpon>
@@ -122,7 +122,7 @@
     <AppDesigner Include="Properties\" />
   </ItemGroup>
   <ItemGroup>
-    <Page Include="MeetView.xaml">
+    <Page Include="CreateMeetView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -131,7 +131,16 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <ProjectReference Include="..\ParityDarts.Contracts\ParityDarts.Contracts.csproj">
+      <Project>{80F96578-ACE8-419E-B7FD-3CE161D46011}</Project>
+      <Name>ParityDarts.Contracts</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ParityDarts.Model\ParityDarts.Model.csproj">
+      <Project>{1B00C191-1381-4C5C-BA70-81AC969A48A6}</Project>
+      <Name>ParityDarts.Model</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

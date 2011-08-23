@@ -3,7 +3,7 @@
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
 	xmlns:i="clr-namespace:System.Windows.Interactivity;assembly=System.Windows.Interactivity"            
-    xmlns:CinchV2="clr-namespace:Cinch;assembly=Cinch.WPF"
+    xmlns:cinch="clr-namespace:Cinch;assembly=Cinch.WPF"
     xmlns:cal="clr-namespace:Microsoft.Practices.Prism.Regions;assembly=Microsoft.Practices.Prism"  
     xmlns:regions="clr-namespace:ParityDarts.Regions"        
     xmlns:meffed="clr-namespace:MEFedMVVM.ViewModelLocator;assembly=MEFedMVVM.WPF"
@@ -15,7 +15,7 @@
     	<Border DockPanel.Dock="Left" BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="100" VerticalAlignment="Top" Width="100" Background="#FFA51C1C" CornerRadius="10">
     		<i:Interaction.Triggers>
                     <i:EventTrigger EventName="MouseLeftButtonUp">
-                        <CinchV2:EventToCommandTrigger 
+                        <cinch:EventToCommandTrigger 
                                  Command="{Binding AddNewMeetCommand}"/>
                     </i:EventTrigger>
                 </i:Interaction.Triggers>

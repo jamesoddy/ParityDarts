@@ -57,19 +57,14 @@ namespace ParityDarts
         private void ExecuteAddNewMeetCommand(Object args)
         {
             messageBoxService.ShowInformation("Add new meet.");
-            //IRegionManager regionManager = RegionManager.GetRegionManager(
-            //    (DependencyObject)viewAwareStatus.View);
-            //IRegion region = regionManager.Regions[RegionNames.MainRegion];
 
-            //GoogleImageSearchView googleImageSearchView =
-            //    ViewModelRepository.Instance.Resolver.Container.GetExport<GoogleImageSearchView>().Value;
-            //googleImageSearchView.ContextualData =
-            //    new Model.GoogleImageSearchInfo(
-            //        randomSearchTerms[rand.Next(randomSearchTerms.Length)],
-            //        string.Format("Imageregion_{0}", searchViewsCounter++));
-            //region.Add(googleImageSearchView);
-            //region.Activate(googleImageSearchView);
-            //searchViewsInstanceCounter++;
+            IRegionManager regionManager = RegionManager.GetRegionManager(
+                (DependencyObject)viewAwareStatus.View);
+            IRegion region = regionManager.Regions[RegionNames.MainRegion];
+
+            CreateMeetView createMeetView = new CreateMeetView();
+            region.Add(createMeetView);
+            region.Activate(createMeetView);
         }
 
         #endregion
