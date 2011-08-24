@@ -5,8 +5,8 @@ using System.Text;
 
 namespace ParityDarts.Contracts
 {
-    public interface IMeetViewFactory
+    public interface IMeetViewModel
     {
-        object CreateView();
+        IMeet Meet { get; }
     }
 }

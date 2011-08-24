@@ -8,6 +8,11 @@ using ParityDarts.Contracts;
 using Cinch;
 using System.Collections.ObjectModel;
 using System.ComponentModel;
+using Microsoft.Practices.Prism.Regions;
+using System.Windows;
+using ParityDarts.Regions;
+using System.Windows.Controls;
+using ParityDarts.Model;
 
 namespace ParityDarts
 {
@@ -15,37 +20,33 @@ namespace ParityDarts
     [PartCreationPolicy(CreationPolicy.NonShared)]
     public class CreateMeetViewModel : Cinch.ViewModelBase
     {
-        [ImportMany(typeof(IMeetFactory))]
-        IEnumerable<IMeetFactory> meetFactories;
+        [ImportMany(typeof(IMeetViewFactory))]
+        IEnumerable<IMeetViewFactory> meetFactories;
 
-        private IMeetFactory selectedMeetFactory;
+        private IMeetViewFactory selectedMeetFactory;
 
         private IViewAwareStatus viewAwareStatus;
         private IMessageBoxService messageBoxService;
 
         [ImportingConstructor]
-        public CreateMeetViewModel(IViewAwareStatus viewAwareStatus,
-            IMessageBoxService messageBoxService)
+        public CreateMeetViewModel(IViewAwareStatus viewAwareStatus, IMessageBoxService messageBoxService)
         {
             this.viewAwareStatus = viewAwareStatus;
             this.messageBoxService = messageBoxService;
 
             //Commands
             CreateMeetCommand = new SimpleCommand<Object, Object>(CanExecuteCreateMeetCommand, ExecuteCreateMeetCommand);
-            SelectMeetFactoryCommand = new SimpleCommand<object, object>(ExecuteSelectMeetFactoryCommand);
 
             Mediator.Instance.Register(this);
         }
 
-        public IEnumerable<IMeetFactory> MeetFactories
+        public IEnumerable<IMeetViewFactory> MeetFactories
         {
             get
             {
                 return meetFactories;
             }
         }
-
-        public SimpleCommand<object, object> SelectMeetFactoryCommand { get; private set; }
 
         public SimpleCommand<object, object> CreateMeetCommand { get; private set; }
 
@@ -56,20 +57,21 @@ namespace ParityDarts
 
         private void ExecuteCreateMeetCommand(Object args)
         {
-            IMeet meet = SelectedMeetFactory.CreateMeet();
-            messageBoxService.ShowInformation(string.Format("Created Meet {0}", meet.GetType().Name));
+
+            IRegionManager regionManager = RegionManager.GetRegionManager(
+                (DependencyObject)viewAwareStatus.View);
+            IRegion region = regionManager.Regions[RegionNames.MainRegion];
+
+            IViewContext<IMeet> meetView = (IViewContext<IMeet>)SelectedMeetFactory.CreateView();
+            meetView.ContextualData = new StandardMeet() { Name = "TestName" };
+            region.Add(meetView);
+            region.Activate(meetView);
         }
-
-        private void ExecuteSelectMeetFactoryCommand(Object args)
-        {
-
-        }
-
 
         static PropertyChangedEventArgs selectedMeetFactoryArgs =
             ObservableHelper.CreateArgs<CreateMeetViewModel>(x => x.SelectedMeetFactory);
 
-        public IMeetFactory SelectedMeetFactory
+        public IMeetViewFactory SelectedMeetFactory
         {
             get { return selectedMeetFactory; }
             set

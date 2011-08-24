@@ -86,6 +86,12 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="IViewContext.cs" />
+    <Compile Include="OtherMeetFactory.cs" />
+    <Compile Include="OtherMeetViewModel.cs" />
+    <Compile Include="OtherMeetView.xaml.cs">
+      <DependentUpon>OtherMeetView.xaml</DependentUpon>
+    </Compile>
     <Compile Include="CreateMeetView.xaml.cs">
       <DependentUpon>CreateMeetView.xaml</DependentUpon>
     </Compile>
@@ -95,6 +101,11 @@
       <DependentUpon>Shell.xaml</DependentUpon>
     </Compile>
     <Compile Include="ShellViewModel.cs" />
+    <Compile Include="StandardMeetFactory.cs" />
+    <Compile Include="StandardMeetView.xaml.cs">
+      <DependentUpon>StandardMeetView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="StandardMeetViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ParityDartsBootstrapper.cs" />
@@ -122,11 +133,19 @@
     <AppDesigner Include="Properties\" />
   </ItemGroup>
   <ItemGroup>
+    <Page Include="OtherMeetView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
     <Page Include="CreateMeetView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Shell.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="StandardMeetView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

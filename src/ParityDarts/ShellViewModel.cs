@@ -8,6 +8,7 @@ using Cinch;
 using Microsoft.Practices.Prism.Regions;
 using System.Windows;
 using ParityDarts.Regions;
+using System.Collections.ObjectModel;
 
 namespace ParityDarts
 {
@@ -15,12 +16,12 @@ namespace ParityDarts
     [PartCreationPolicy(CreationPolicy.NonShared)]
     public class ShellViewModel : Cinch.ViewModelBase
     {
-        #region Data
         
         private IViewAwareStatus viewAwareStatus;
         private IMessageBoxService messageBoxService;
 
-        #endregion
+        private ObservableCollection<ViewModelBase> workspaces;
+
 
         [ImportingConstructor]
         public ShellViewModel(IViewAwareStatus viewAwareStatus,
@@ -28,32 +29,15 @@ namespace ParityDarts
         {
             this.viewAwareStatus = viewAwareStatus;
             this.messageBoxService = messageBoxService;
-            this.viewAwareStatus.ViewLoaded += ViewAwareStatus_ViewLoaded;
 
             //Commands
             AddNewMeetCommand = new SimpleCommand<Object, Object>(ExecuteAddNewMeetCommand);
-
-
+            
             Mediator.Instance.Register(this);
         }
-
-
-
-
+        
         public SimpleCommand<Object, Object> AddNewMeetCommand { get; private set; }
-
-
-
-
-        #region Private Methods
-
-        private void ViewAwareStatus_ViewLoaded()
-        {
-            IRegionManager regionManager =
-                RegionManager.GetRegionManager((DependencyObject)viewAwareStatus.View);
-            //IRegion region = regionManager.Regions[RegionNames.MainRegion];            
-        }
-
+        
         private void ExecuteAddNewMeetCommand(Object args)
         {
             messageBoxService.ShowInformation("Add new meet.");
@@ -66,13 +50,6 @@ namespace ParityDarts
             region.Add(createMeetView);
             region.Activate(createMeetView);
         }
-
-        #endregion
-
-
-
-
-
 
     }
 }

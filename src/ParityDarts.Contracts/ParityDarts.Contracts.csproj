@@ -45,6 +45,7 @@
     <Compile Include="Boards\IBoard.cs" />
     <Compile Include="Boards\IBoardRegion.cs" />
     <Compile Include="Darts\IDart.cs" />
+    <Compile Include="Meets\IMeetViewModel.cs" />
     <Compile Include="Meets\IMeet.cs" />
     <Compile Include="Meets\IMeetFactory.cs" />
     <Compile Include="Legs\ILeg.cs" />

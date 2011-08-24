@@ -3,10 +3,10 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace ParityDarts.Contracts
+namespace ParityDarts
 {
-    public interface IMeetViewFactory
+    public interface IViewContext<T>
     {
-        object CreateView();
+        T ContextualData { get; set; }
     }
 }
