@@ -16,3 +16,9 @@ ITournament
 	- SingleKnockoutTournament
 IMeet
 	- StandardMeet
+
+-MeetView
+--MeetViewModel
+---IMeet
+---IMeetFactory
+---CreateNewMeet() ??

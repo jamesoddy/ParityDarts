@@ -13,7 +13,7 @@ using System.ComponentModel;
 namespace ParityDarts
 {
     [Export(typeof(IMeetViewModel))]
-    [ExportViewModel("StandardMeetViewModel")]
+    [ExportViewModel("StandardMeetViewModel", true)]
     [PartCreationPolicy(CreationPolicy.NonShared)]
     public class StandardMeetViewModel : EditableValidatingViewModelBase, IMeetViewModel
     {
